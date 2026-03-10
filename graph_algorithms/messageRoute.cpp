@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+ 
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
+ 
     int n,m;
     cin>>n>>m;
     vector<vector<pair<int,int>>> adj(n+1);
@@ -22,13 +22,13 @@ int main(){
         int d = pq.top().first;
         int u = pq.top().second;
         pq.pop();
-
+ 
         if(d > dist[u]) continue;
-
+ 
         for(auto it: adj[u]){
             int v = it.first;
             int w = it.second;
-
+ 
             if(dist[v] > dist[u]+w){
                 dist[v] = dist[u]+w;
                 parent[v] = u;
